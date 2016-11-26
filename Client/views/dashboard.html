@@ -1,0 +1,59 @@
+<div   class="page1">
+	<div id="height">
+	    <!-- heading section -->
+		<div class="pageHead text-center">
+			<div class="col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10">
+				<h1>{{dashboard.heading}}</h1>
+			</div>
+			<br>
+			<br>
+			<div ng-if = "dashboard.user !== 'Admin'" class="col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10">
+				<a href="#/create/{{dashboard.userId}}" class="btn btn-default">Create New Query</a>
+			</div>
+		</div>
+
+		
+
+		<!-- heading section -->
+		<div ng-if="dashboard.queries.length===0" class=" text-center">
+			<div class="col-xs-offset-1 col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-lg-10" id="noquery">
+				<h3>No Queries Raised Yet <br>Go Ahead And Create A Query</h3>
+			</div>
+		</div>
+		
+
+		<div  ng-if="dashboard.queries.length>0" class="container">
+		    <!-- filter box -->
+		    <input id="filter" class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8 col-xs-offset-2 col-xs-8 " type="search" ng-model="search.$" placeholder="Filter Queries..." aria-label="Filter Queries" />
+
+		    <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8 col-xs-offset-2 col-xs-8 text-center" >
+		    	<br><!-- Filter Buttons -->
+		    	<button class="btn btn-default " ng-click = "dashboard.open()">Open Queries</button>
+		    	<button class="btn btn-default " ng-click = "dashboard.close()">Closed Queries</button>
+		    	<button class="btn btn-default " ng-click = "dashboard.all()">All Queries</button>
+		    	<br>
+		    </div>
+
+			<!-- queries section -->
+			<div ng-repeat="query in dashboard.queries| filter: search :strict" >
+			  
+				<div ng-mouseover="dashboard.show=$index"  ng-mouseleave="dashboard.show=false" class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8 col-xs-offset-2 col-xs-8 cardBody" ng-class="{cardBodyfirst: $first}">
+				        <div ng-if="dashboard.show === $index"  class="queryCardFooter text-left">
+				        	<a ng-click="dashboard.deleteQuery(query.ticketNumber , $index)"><span class="glyphicon glyphicon-trash aria-hidden="true"></span></a>
+				        </div>
+						<a href="#/query/{{query.ticketNumber}}">
+							<div class="queryCardHead">
+								<h3>{{query.title}}</h3>
+								{{query.details}}
+							</div>
+						</a>
+						<div ng-if="dashboard.show === $index"  class="queryCardFooter text-left">
+							<a class="btn btn-xs pull-right btn-default" ng-click="dashboard.openclose(query.ticketNumber)">{{dashboard.getStatus($index)}}</a>
+						</div>
+				</div>
+			</div>
+		</div>
+
+	</div><!-- end height-->
+</div><!-- end  page1-->
+

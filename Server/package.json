@@ -1,0 +1,21 @@
+{
+  "name": "Ticket_based_support_system",
+  "private": false,
+  "main": "app.js",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "latest",
+    "cookie-parser": "latest",
+    "cors": "^2.8.1",
+    "event-emitter": "^0.3.4",
+    "express": "latest",
+    "express-jwt": "^5.1.0",
+    "express-session": "^1.14.2",
+    "jsonwebtoken": "^7.1.9",
+    "mongoose": "latest",
+    "morgan": "latest",
+    "multer": "^1.2.0",
+    "nodemailer": "^2.6.4",
+    "shortid": "^2.2.6"
+  }
+}
