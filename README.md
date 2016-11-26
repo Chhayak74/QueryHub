@@ -20,7 +20,7 @@ kind of platform to get support queries from their users and resolve them.
 8. Similar options are available to the admin with the queries of all the users listed in dashboard.
 9. Dashboard also has option to filter queries on the basis of ticket status (open/closed).
 
-#### Assumtions made while building this application - 
+#### Assumptions made while building this application - 
 
 1. Access to admin panel can done using an account with following credentials -
     
@@ -36,6 +36,6 @@ kind of platform to get support queries from their users and resolve them.
 #### Setup
 1. Clone or download the code.
 2. `npm install` to install all dependencies
-3. To start the application run `node app.js` in your terminal under the Server direcotry.
+3. To start the application run `node app.js` in your terminal under the Server directory.
 
 

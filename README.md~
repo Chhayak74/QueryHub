@@ -24,8 +24,8 @@ kind of platform to get support queries from their users and resolve them.
 
 1. Access to admin panel can done using an account with following credentials -
     
-    name : Admin
-    email : admin@domain.com
+    name : Admin <br />
+    email : admin@domain.com <br />
     Password can be anything as per admin's wish.
 
 #### Prerequisites of using this application - 
